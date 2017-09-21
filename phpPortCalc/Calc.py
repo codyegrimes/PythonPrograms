@@ -17,7 +17,7 @@ def getInput():
 	
 	return inputs
 	
-#startingSR, targetSR = getInput()
+
 	
 	
 	
@@ -69,6 +69,118 @@ def recursiveCalc(startingSR, targetSR, price): #todo revise: price/currentTier 
 		priceInTier = priceForTier(tierSR, currentTierPrice)
 		price = accumulatePrice(price, priceInTier)
 		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4300):
+		currentTierPrice = 2.3
+		tierSR = calcTierSR(targetSR, 4300)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4250):
+		currentTierPrice = 2.0
+		tierSR = calcTierSR(targetSR, 4250)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4200):
+		currentTierPrice = 1.2
+		tierSR = calcTierSR(targetSR, 4200)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4150):
+		currentTierPrice = 1.1
+		tierSR = calcTierSR(targetSR, 4150)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4100):
+		currentTierPrice = 0.9
+		tierSR = calcTierSR(targetSR, 4100)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4050):
+		currentTierPrice = .8
+		tierSR = calcTierSR(targetSR, 4050)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>4000):
+		currentTierPrice = .6
+		tierSR = calcTierSR(targetSR, 4000)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>3750):
+		currentTierPrice = .48
+		tierSR = calcTierSR(targetSR, 3750)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>3500):
+		currentTierPrice = .36
+		tierSR = calcTierSR(targetSR, 3500)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>3250):
+		currentTierPrice = .26
+		tierSR = calcTierSR(targetSR, 3250)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>3000):
+		currentTierPrice = .22
+		tierSR = calcTierSR(targetSR, 3000)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>2750):
+		currentTierPrice = .18
+		tierSR = calcTierSR(targetSR, 2750)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>2500):
+		currentTierPrice = .14
+		tierSR = calcTierSR(targetSR, 2500)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>2000):
+		currentTierPrice = .1
+		tierSR = calcTierSR(targetSR, 2000)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>1500):
+		currentTierPrice = .08
+		tierSR = calcTierSR(targetSR, 1500)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>1000):
+		currentTierPrice = .05
+		tierSR = calcTierSR(targetSR, 1000)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>500):
+		currentTierPrice = .04
+		tierSR = calcTierSR(targetSR, 500)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+	elif(targetSR>1):
+		currentTierPrice = .04
+		tierSR = calcTierSR(targetSR, 1)
+		priceInTier = priceForTier(tierSR, currentTierPrice)
+		price = accumulatePrice(price, priceInTier)
+		targetSR = adjustTargetSR(targetSR, tierSR)
+		
+		
+		
+		
 		
 	if(targetSR<=startingSR):
 		return price - ((startingSR - targetSR) * currentTierPrice)
@@ -82,14 +194,14 @@ def recursiveCalc(startingSR, targetSR, price): #todo revise: price/currentTier 
 	
 	
 	
+
 price = 0
-
-
 #run calculator --> what the user sees
 def calc(startingSR, targetSR):
 	return recursiveCalc(startingSR,targetSR, price) #INTERNAL call with other params
 	
-#hard coding for now in order to test
-result = calc(4370, 4401)
+
+startingSR, targetSR = getInput()
+result = calc(startingSR, targetSR)
 print (result)
 	
