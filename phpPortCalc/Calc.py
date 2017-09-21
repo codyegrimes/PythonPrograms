@@ -1,3 +1,7 @@
+#set values to variables
+price = 0 
+
+#define functions
 def getInput():
 	"""
 	#reStructuredText (reST) format: https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format#
@@ -16,21 +20,7 @@ def getInput():
 	inputs.append(input2)
 	
 	return inputs
-	
-
-	
-	
-	
-def calculate(currentTierPrice, targetSR, price, tierCieling):
-	#DEPRECATED: has been split into four methods
-	tierSR = targetSR - tierCieling
-	priceForTier = tierSR * currentTierPrice
-	price += priceForTier
-	targetSR -= tierSR
-	return currentTierPrice, targetSR, price
-	
-	
-	
+		
 def calcTierSR(targetSR, tierCieling): #determines how much SR to be price at this tier
 	tierSR = targetSR - tierCieling
 	return tierSR
@@ -47,8 +37,14 @@ def accumulatePrice(price, priceForTier): #think of better function name; adds t
 	price += priceForTier
 	return price
 	
+def calc(startingSR, targetSR):
+	return recursiveCalc(startingSR,targetSR, price) #INTERNAL call with other params
 	
-	
+def calcDiscount(result, discPercentage):
+	discPercentage = discPercentage / 100
+	discPrice = result - (result * discPercentage)
+	return discPrice
+
 	
 def recursiveCalc(startingSR, targetSR, price): #todo revise: price/currentTier start at 0, get replaced by actual value...
 	if(targetSR>4450):
@@ -178,30 +174,30 @@ def recursiveCalc(startingSR, targetSR, price): #todo revise: price/currentTier 
 		price = accumulatePrice(price, priceInTier)
 		targetSR = adjustTargetSR(targetSR, tierSR)
 		
-		
-		
-		
-		
-	if(targetSR<=startingSR):
+	if(targetSR<=startingSR): #base case; time to return the price for the order
 		return price - ((startingSR - targetSR) * currentTierPrice)
 	else:
 		return recursiveCalc(startingSR, targetSR, price)
 
+def calcStandardPrice():	
+	startingSR, targetSR = getInput() #ask user for the SR range for the order
+	result = calc(startingSR, targetSR) #get value for standard price for the order
+	print (result) #print out the standard price for the order
+	return result
+	
+def calcDiscountedPrice(standardPrice):
+	askDiscount = (input("Should this order recieve a discount? (Y/N)")) #ask if order should be discounted
+	if (askDiscount.upper() == 'Y'):
+		discPercentage = int(input("Enter % discount: "))
+		discPrice = calcDiscount(standardPrice, discPercentage)
+		print (discPrice)
+	else:
+		print('Thank you for using my calculator!')
 
-	
-	
-	
-	
-	
-	
+def runCalculator():
+	standardPrice = calcStandardPrice()
+	calcDiscountedPrice(standardPrice)
 
-price = 0
-#run calculator --> what the user sees
-def calc(startingSR, targetSR):
-	return recursiveCalc(startingSR,targetSR, price) #INTERNAL call with other params
-	
 
-startingSR, targetSR = getInput()
-result = calc(startingSR, targetSR)
-print (result)
-	
+runCalculator()
+
